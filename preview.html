@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PetVerse – پیش‌نمایش UI</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700&display=swap');
+*{box-sizing:border-box;margin:0;font-family:'Vazirmatn',system-ui,Tahoma,sans-serif}
+body{background:#FFF9F5;color:#1f1f1f}
+.wrap{max-width:1100px;margin:0 auto;padding:24px}
+.header{text-align:center;padding:28px 0}
+.header h1{color:#FF6B4A;font-size:36px}
+.badge{display:inline-block;background:#fff;border:1px solid #ffd5c8;color:#c84a2a;padding:4px 10px;border-radius:999px;font-size:12px;margin:4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:12px}
+.card{background:#fff;border:1px solid #ffe3d6;border-radius:20px;padding:16px;box-shadow:0 2px 8px rgba(255,107,74,0.06)}
+.card h3{font-size:17px;margin-bottom:6px}
+.mut{color:#666;font-size:13px}
+.btn{background:#FF6B4A;color:#fff;border:none;padding:9px 14px;border-radius:12px;font-weight:600;cursor:pointer}
+.btn2{background:#fff;border:1px solid #ddd;padding:8px 12px;border-radius:12px;cursor:pointer}
+.tag{display:inline-block;background:#fff3ef;color:#d04a24;padding:2px 8px;border-radius:999px;font-size:11px;margin:2px}
+.chatbox{height:220px;overflow:auto;background:#fffaf7;border:1px dashed #ffd2be;border-radius:12px;padding:10px;font-size:13px}
+.feedimg{height:140px;background:linear-gradient(135deg,#ffe9df,#fff5ef);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:28px}
+.kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0}
+.kpi div{background:#fff;border:1px solid #eee;border-radius:14px;padding:12px;text-align:center}
+.kpi b{font-size:20px;color:#FF6B4A}
+.nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:12px 0}
+.nav a{background:#fff;border:1px solid #ffd2be;padding:6px 14px;border-radius:999px;font-size:13px;text-decoration:none;color:#333}
+.section{margin:28px 0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:720px){.two{grid-template-columns:1fr}.kpi{grid-template-columns:1fr 1fr}}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:12px;font-family:inherit;background:#fff}
+.redbox{background:#fff0f0;border:1px solid #ffb8b8;color:#b42318;padding:10px;border-radius:12px;font-size:13px}
+.greenbox{background:#f0fff4;border:1px solid #b8e6c1;color:#12733e;padding:10px;border-radius:12px;font-size:13px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+td,th{padding:8px;border-bottom:1px solid #f0d9cd;text-align:right}
+small{color:#888}
+hr{border:none;border-top:1px solid #f2d6c7;margin:18px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <h1>PetVerse 🐾</h1>
+    <div style="font-size:18px;margin-top:6px">خانه دوم پت‌دارها – پیش‌نمایش UI – v1.4</div>
+    <div style="margin-top:10px">
+      <span class="badge">Next.js 14 RTL</span>
+      <span class="badge">PetConnect</span>
+      <span class="badge">PetPal AI FA</span>
+      <span class="badge">VetCare LiveKit</span>
+      <span class="badge">Commerce Visual</span>
+      <span class="badge">Insurance</span>
+    </div>
+    <div class="nav">
+      <a href="#onboarding">شروع</a>
+      <a href="#feed">فید</a>
+      <a href="#chat">چت</a>
+      <a href="#pal">PetPal</a>
+      <a href="#vet">VetCare</a>
+      <a href="#shop">خرید</a>
+      <a href="#insurance">بیمه</a>
+      <a href="#events">رویداد</a>
+      <a href="#profile">پروفایل</a>
+    </div>
+  </div>
+
+  <!-- Onboarding -->
+  <div id="onboarding" class="section">
+    <h2>۱. Onboarding – پروفایل انسان+پت</h2>
+    <div class="two" style="margin-top:10px">
+      <div class="card">
+        <h3>مرحله ۱ از ۳ – معرفی پت</h3>
+        <p class="mut">نام پت</p>
+        <input value="لونا" readonly>
+        <div style="margin:8px 0">
+          <label><input type="radio" checked> سگ</label> &nbsp;
+          <label><input type="radio"> گربه</label>
+        </div>
+        <select><option>هاسکی</option><option>ژرمن</option><option>پرشین</option></select>
+        <div style="margin-top:8px"><input value="18" placeholder="سن (ماه)"></div>
+        <div style="margin-top:10px"><button class="btn">بعدی →</button></div>
+        <small>موقعیت مکانی پیش‌فرض خاموش</small>
+      </div>
+      <div class="card">
+        <h3>مرحله ۲ – علاقه‌ها</h3>
+        <p class="mut">۳ تا انتخاب کن:</p>
+        <div>
+          <span class="tag" style="background:#FF6B4A;color:#fff">پیاده‌روی</span>
+          <span class="tag" style="background:#FF6B4A;color:#fff">تربیت</span>
+          <span class="tag">نجات</span>
+          <span class="tag" style="background:#FF6B4A;color:#fff">غذای خانگی</span>
+          <span class="tag">سفر با پت</span>
+          <span class="tag">رفتارشناسی</span>
+        </div>
+        <div style="margin-top:14px" class="greenbox">باشگاه auto-join: <b>هاسکی‌کلاب تهران</b></div>
+        <div style="margin-top:10px"><button class="btn">اتمام و ورود به خونه دوم 🎉</button></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feed -->
+  <div id="feed" class="section">
+    <h2>۲. فید محلی – PetConnect</h2>
+    <div style="margin:8px 0">
+      <span class="tag" style="background:#FF6B4A;color:#fff">زمانی+محلی</span>
+      <span class="tag">باشگاه‌ها</span>
+      <span class="tag">نزدیک من 5km</span>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <b>لونا 🐶 هاسکی</b> <small>• هاسکی‌کلاب تهران • ۲ ساعت پیش</small>
+        <p style="margin:8px 0">امروز پارک ملت پیاده‌روی گروهی بود، لونا ۳ دوست جدید پیدا کرد!</p>
+        <div class="feedimg">📸 پارک ملت</div>
+        <small>تهران – ۲.۱km • ❤️ ۲۴ • 💬 ۵</small>
+      </div>
+      <div class="card">
+        <b>میلو 🐱 پرشین</b> <small>• گربه‌های خانگی • ۴ ساعت پیش</small>
+        <p style="margin:8px 0">کسی غذای خانگی بدون مرغ سراغ داره؟ آلرژی داریم.</p>
+        <small>استانبول • ❤️ ۱۲ • 💬 ۸</small>
+      </div>
+      <div class="card">
+        <b>دکتر سارا ✓</b> <span class="tag">دامپزشک تاییدشده</span><br>
+        <small>کانال دامپزشکان • دیروز</small>
+        <p style="margin:8px 0">یادآوری واکسن هاری – کارت واکسن پت‌تون رو چک کنید.</p>
+        <small>❤️ ۵۶</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chat -->
+  <div id="chat" class="section">
+    <h2>۳. چت – باشگاه‌ها – E2E</h2>
+    <div class="two">
+      <div class="card">
+        <b>گفتگوها</b>
+        <ul style="margin:10px 18px; line-height:1.9; font-size:14px">
+          <li><b>هاسکی‌کلاب</b> – ۱۲۴ آنلاین</li>
+          <li>تربیت توله</li>
+          <li>تهران vet Q&A</li>
+          <li>میلو (PV)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <b>هاسکی‌کلاب</b>
+        <div class="chatbox" style="margin:8px 0">
+          <div><b>علی:</b> سلام بچه‌ها جمعه پارک آب و آتش میایم؟</div>
+          <div><b>سارا:</b> من هستم + لونا 🐾</div>
+          <div style="color:#d05a28;margin-top:6px">🤖 Ice-breaker: توله‌تون این هفته چی یاد گرفت؟</div>
+          <div><b>رضا:</b> بشین رو یاد گرفت بالاخره 😄</div>
+        </div>
+        <input placeholder="پیام… E2E رمزنگاری شده">
+        <small>مکان share: خاموش – geofuzz 500m</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- PetPal -->
+  <div id="pal" class="section">
+    <h2>۴. PetPal AI – تریاژ فارسی</h2>
+    <div class="two">
+      <div class="card">
+        <b>PetPal – تریاژ</b>
+        <textarea rows="4" style="margin:8px 0;width:100%">استفراغ ۲ بار، بی‌حالی از صبح…</textarea>
+        <button class="btn">تحلیل کن</button>
+        <small> – آموزشی‌ست، جایگزین ویزیت نیست</small>
+        <div style="margin-top:10px">
+          <button class="btn2">تربیت</button>
+          <button class="btn2">تغذیه</button>
+          <button class="btn2">چت آزاد</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="redbox" style="display:none" id="redflag">🚨 پرچم قرمز – اورژانس!</div>
+        <div id="okbox">
+          <b>خلاصه:</b> علائم خفیف تا متوسط – احتمال گاستریت
+          <p style="margin:8px 0;font-size:13px"><b>توصیه:</b> ۱۲ ساعت ناشتا، آب کم‌کم. پایش ۲۴ ساعته.</p>
+          <div style="font-size:12px;color:#555">
+            RAG sources: استفراغ – هاسکی – 18mo • اسهال • بی‌حالی<br>
+            confidence: 0.74 – model: gpt-4o-rag / rag-fallback
+          </div>
+          <div style="margin-top:10px">
+            <button class="btn" style="background:#1a9e4a">رزرو نوبت VetCare →</button>
+          </div>
+          <p style="margin-top:8px;font-size:12px">سوالات پیگیری: تب دارد؟ آخرین واکسن کی بود؟ اشتها چطوره؟</p>
+        </div>
+        <hr>
+        <small>اگر متن شامل «خون / تشنج / بیهوش» باشد → red-flag خودکار → ارجاع اورژانس + LiveKit instant</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- VetCare -->
+  <div id="vet" class="section">
+    <h2>۵. VetCare Hub – نوبت + ویدیو</h2>
+    <div class="grid">
+      <div class="card">
+        <b>دکتر سارا احمدی ✓</b><br>
+        <small>داخلی – گوارش – License IR-43521 – ⭐ 4.8</small>
+        <p style="margin:8px 0">امروز ۱۴:۰۰ – آنلاین – ۴۵۰,۰۰۰ تومان</p>
+        <button class="btn">رزرو نوبت</button>
+      </div>
+      <div class="card">
+        <b>دکتر علی رضایی ✓</b><br>
+        <small>جراحی – ⭐ 4.6 – تهران</small>
+        <p style="margin:8px 0">امروز ۱۶:۳۰ – حضوری – ۶۵۰,۰۰۰ تومان</p>
+        <button class="btn">رزرو نوبت</button>
+      </div>
+      <div class="card">
+        <b>Dr. Aisha Al-Maktoum ✓</b><br>
+        <small>Emergency – Dubai – DHA licensed</small>
+        <p style="margin:8px 0">Available now – Online – AED 220</p>
+        <button class="btn">Book now</button>
+      </div>
+    </div>
+    <div class="card" style="margin-top:12px">
+      <b>ویدیوویزیت LiveKit – تست</b>
+      <div style="background:#111;color:#4ade80;padding:16px;border-radius:12px;margin:8px 0;font-family:monospace;font-size:13px;text-align:center">
+        🔴 LIVE – room: petverse-apt_demo<br>
+        wss://petverse.livekit.cloud<br>
+        token: lk_demo_XXXXXXXX…
+      </div>
+      <button class="btn2">🎤 Mute</button>
+      <button class="btn2">📷 Cam</button>
+      <button class="btn2">📄 اشتراک نسخه</button>
+      <button style="background:#dc2626;color:#fff;border:none;padding:8px 12px;border-radius:12px">قطع تماس</button>
+      <p style="margin-top:8px;font-size:12px;color:#555">e-Prescription بعد از ویزیت اینجا نمایش داده می‌شود</p>
+    </div>
+  </div>
+
+  <!-- Shop -->
+  <div id="shop" class="section">
+    <h2>۶. Commerce هوشمند</h2>
+    <div class="card">
+      <div style="display:flex;gap:8px">
+        <input placeholder="جستجو یا آپلود عکس…" style="flex:1">
+        <button class="btn">🔍 Visual Search</button>
+        <button class="btn2">📷</button>
+      </div>
+      <small>CLIP/ViT + FAISS – 10 منبع قیمت – Best Price Assist</small>
+    </div>
+    <div class="grid" style="margin-top:12px">
+      <div class="card"><div class="feedimg" style="height:100px">📦</div><b>رویال کنین هاسکی Adult</b><br><small>1,280,000 تومان <span style="color:#16a34a">Best Price ✓</span></small><br><button class="btn" style="margin-top:8px;width:100%;font-size:13px">افزودن</button></div>
+      <div class="card"><div class="feedimg" style="height:100px">🦴</div><b>تشویقی تریتس مرغ</b><br><small>340,000 تومان</small><br><button class="btn" style="margin-top:8px;width:100%;font-size:13px">افزودن</button></div>
+      <div class="card"><div class="feedimg" style="height:100px">📡</div><b>قلاده GPS PetTracer</b><br><small>2,100,000 تومان <span style="color:#16a34a">Best Price ✓</span></small><br><button class="btn" style="margin-top:8px;width:100%;font-size:13px">افزودن</button></div>
+    </div>
+  </div>
+
+  <!-- Insurance / Events / Profile -->
+  <div class="section two" id="insurance">
+    <div>
+      <h3>۷. بیمه</h3>
+      <div class="card">
+        <b>Lemonade</b> – Accident – $35/mo – پوشش $10,000<br>
+        <b>Cover Genius</b> – Comprehensive – $56/mo – $15,000<br><br>
+        <button class="btn" style="width:100%">دریافت پیش‌فاکتور</button>
+        <small>صدور توسط شریک دارای مجوز</small>
+      </div>
+    </div>
+    <div id="events">
+      <h3>رویداد محلی</h3>
+      <div class="card">
+        🐾 <b>پیاده‌روی گروهی هاسکی‌ها</b><br>
+        <small>پارک آب و آتش – تهران – جمعه ۱۰ صبح – ۲۴ نفر می‌آیند – چک‌این QR</small><br><br>
+        🩺 <b>Vet Q&A – تغذیه توله</b><br>
+        <small>آنلاین LiveKit – شنبه ۱۹:۰۰ – ۵۶ نفر</small>
+      </div>
+    </div>
+  </div>
+
+  <div id="profile" class="section">
+    <h2>۸. پروفایل پت + Badge + IoT</h2>
+    <div class="two">
+      <div class="card">
+        <b>لونا 🐶</b> – هاسکی – ۱۸ ماه – ۲۲kg<br>
+        <small>خلق‌وخو: بازیگوش – علایق: پیاده‌روی، تربیت</small><br>
+        <small>واکسن هاری: ✅ ۱۴۰۴/۱۲</small><br>
+        <small>IoT: GPS آنلاین – باتری 78% – Smart feeder متصل</small>
+      </div>
+      <div class="card">
+        <b>Badge‌ها</b><br>
+        🏅 مهربون محله – 🥾 پارک‌گرد – 🎓 مربی توله – ❤️ حامی نجات<br>
+        <small>Mint NFT اختیاری – Polygon – 0.001$</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin -->
+  <div class="section">
+    <h2>۹. پنل Admin شفاف – http://localhost:3001</h2>
+    <div class="kpi">
+      <div><small>WAU</small><br><b>3,842</b></div>
+      <div><small>MAU</small><br><b>11,200</b></div>
+      <div><small>Triage→Booking</small><br><b>19.4%</b></div>
+      <div><small>GMV ماه</small><br><b>$42.1k</b></div>
+    </div>
+    <div class="two">
+      <div class="card"><b>درآمد شفاف</b><br>
+        تراکنش 5-8%: $2,820<br>
+        VetCare 15%: $1,940<br>
+        اشتراک حرفه‌ای: $1,200<br>
+        داده Opt-in: $420
+      </div>
+      <div class="card"><b>Trust & Safety</b><br>
+        گزارش: 0.21%<br>
+        پاسخ مودریشن: 4.2 دقیقه<br>
+        IoT آنلاین: 412 قلاده / 188 feeder
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <div style="text-align:center;padding:18px;color:#666;font-size:13px">
+    PetVerse v1.4 – zero-budget – 7 Agent – 11 صفحه – 9 سرویس – 20+ API<br>
+    <b>GitHub:</b> github.com/maryamghabel3-debug/PETVERSE<br>
+    <b>Local:</b> localhost:3000 (web) · :3001 (admin) · :4000 (api) · :4100 (ai)<br>
+    <b>Deploy 1-click:</b> Vercel – Railway – Cloudflare Pages<br><br>
+    🐾 خانه دوم پت‌دارها – ساخته شده با ❤️ در تهران/استانبول/استکهلم
+  </div>
+</div>
+
+<script>
+// demo red-flag toggle
+document.addEventListener('click', e=>{
+  const ta = document.querySelector('textarea');
+  if(e.target.tagName==='BUTTON' && e.target.textContent.includes('تحلیل')){
+    const v = ta ? ta.value : '';
+    const isRed = /خون|تشنج|بیهوش|blood|seizure/i.test(v);
+    const rf = document.getElementById('redflag');
+    const ok = document.getElementById('okbox');
+    if(rf && ok){
+      if(isRed){ rf.style.display='block'; ok.style.opacity='0.4'; }
+      else { rf.style.display='none'; ok.style.opacity='1'; }
+    }
+  }
+});
+</script>
+</body>
+</html>
