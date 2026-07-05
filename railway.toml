@@ -1,0 +1,14 @@
+[build]
+builder = "nixpacks"
+buildCommand = "pnpm install && pnpm --filter=api build"
+startCommand = "pnpm --filter=api start"
+
+[[services]]
+name = "api"
+port = 4000
+
+[[services]]
+name = "ai-pal"
+buildCommand = "pnpm --filter=ai-pal build"
+startCommand = "pnpm --filter=ai-pal start"
+port = 4100

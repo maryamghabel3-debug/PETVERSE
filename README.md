@@ -38,3 +38,11 @@ pnpm dev
 3. VetCare Hub
 4. Insurance Marketplace
 5. PetPal AI
+
+## Deploy
+- Web: Vercel – apps/web – `vercel.json` ready – region fra1
+- API/AI: Railway – `railway.toml` ready
+- LiveKit: wss://petverse.livekit.cloud (set LIVEKIT_API_KEY)
+- OpenAI: GPT-4o RAG – set OPENAI_API_KEY → auto-switch from rag-fallback to gpt-4o-rag
+
+See `docs/DEPLOY.md`
