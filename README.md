@@ -3,6 +3,10 @@
 
 Super-App: PetConnect Social + VetCare Hub + Commerce هوشمند + PetPal AI
 
+**Repo:** https://github.com/maryamghabel3-debug/PETVERSE
+**PM:** Agent Mode – Arena.ai
+**Team:** 7 Agent تخصصی
+
 ## بازار شروع
 - Phase 1 FA: ایران - Social + AI (بدون پرداخت)
 - Phase 1 INT: UAE - Social + VetCare + Commerce
