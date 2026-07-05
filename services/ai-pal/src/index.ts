@@ -14,16 +14,26 @@ function checkRedFlag(text:string){
 
 app.get('/health', async () => {
   const { VET_KB_FULL_FA } = await import('./vet_kb_full_fa.js');
+  const llm =
+    process.env.OPENAI_API_KEY ? 'gpt-4o-ready' :
+    process.env.GROQ_API_KEY ? 'groq-llama3.3-ready' :
+    process.env.ANTHROPIC_API_KEY ? 'claude-ready' :
+    'rag-fallback';
   return { 
     status: 'ok', 
     service: 'ai-pal', 
-    version: '1.2.0-rag1000',
-    llm: process.env.OPENAI_API_KEY ? 'gpt-4o-ready' : 'rag-fallback',
+    version: '1.5.0',
+    llm,
     rag_kb_entries: (VET_KB_FULL_FA as any).length,
     rag_lang: 'fa+en',
-    models: ['gpt-4o','claude-3.5','llama-3.1'],
+    models: ['gpt-4o','claude-3.5','llama-3.3-70b','llama-3.1-local'],
     pgvector: 'ready',
-    embed_model: 'text-embedding-3-large'
+    embed_model: 'text-embedding-3-large',
+    providers: {
+      openai: !!process.env.OPENAI_API_KEY,
+      groq: !!process.env.GROQ_API_KEY,
+      anthropic: !!process.env.ANTHROPIC_API_KEY
+    }
   }
 });
 
@@ -59,7 +69,10 @@ app.post('/triage', async (req) => {
     follow_up_questions: lang==='fa' ? ['تب دارد؟','آخرین واکسن کی بود؟','اشتها چطوره؟'] : ['Fever?','Vaccine?','Appetite?'],
     next_action: 'vetcare_booking_suggested',
     confidence: rag.length>0 ? 0.74 : 0.58,
-    model: process.env.OPENAI_API_KEY ? 'gpt-4o-rag' : 'rag-fallback-v1',
+    model: process.env.OPENAI_API_KEY ? 'gpt-4o-rag' : 
+           process.env.GROQ_API_KEY ? 'groq-llama3.3-rag' :
+           'rag-fallback-v1',
+    llm_provider: process.env.OPENAI_API_KEY ? 'openai' : process.env.GROQ_API_KEY ? 'groq' : 'local',
     disclaimer: 'PetPal – آموزشی/تریاژ'
   }
 });
