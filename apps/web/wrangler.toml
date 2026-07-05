@@ -1,0 +1,8 @@
+name = "petverse-web"
+compatibility_date = "2024-07-01"
+pages_build_output_dir = ".vercel/output/static"
+# Cloudflare Pages – zero cost – unlimited bandwidth
+# Deploy: npx wrangler pages deploy .vercel/output/static --project-name=petverse
+[env.production.vars]
+NEXT_PUBLIC_API_URL = "https://petverse-api.fly.dev"
+NEXT_PUBLIC_AI_URL = "https://petverse-ai.fly.dev"
