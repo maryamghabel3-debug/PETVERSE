@@ -1,0 +1,422 @@
+[
+  {
+    "id": "PV-100001",
+    "title_fa": "جوسرا غذای خشک گربه پرشین - 10kg",
+    "title_en": "جوسرا غذای خشک گربه پرشین",
+    "brand": "جوسرا",
+    "category": "غذای خشک گربه",
+    "price_irr": 1682210,
+    "price_aed": 112.15,
+    "merchant": "petshop.ir",
+    "in_stock": true,
+    "rating": 4.1,
+    "reviews": 69,
+    "best_price": false,
+    "embedding_dim": 512,
+    "image": "https://cdn.petverse.app/p/100001.jpg",
+    "attributes": {
+      "weight_kg": 4,
+      "life_stage": "puppy",
+      "breed_target": "پرشین"
+    }
+  },
+  {
+    "id": "PV-100002",
+    "title_fa": "رفلکس تشویقی گلدن - 8kg",
+    "title_en": "رفلکس تشویقی گلدن",
+    "brand": "رفلکس",
+    "category": "تشویقی",
+    "price_irr": 2617632,
+    "price_aed": 174.51,
+    "merchant": "drsaina",
+    "in_stock": true,
+    "rating": 4.6,
+    "reviews": 532,
+    "best_price": false,
+    "embedding_dim": 512,
+    "image": "https://cdn.petverse.app/p/100002.jpg",
+    "attributes": {
+      "weight_kg": 7,
+      "life_stage": "adult",
+      "breed_target": "گلدن"
+    }
+  },
+  {
+    "id": "PV-100003",
+    "title_fa": "هپی داگ اسباب‌بازی همه نژادها - 11kg",
+    "title_en": "هپی داگ اسباب‌بازی همه نژادها",
+    "brand": "هپی داگ",
+    "category": "اسباب‌بازی",
+    "price_irr": 3169758,
+    "price_aed": 211.32,
+    "merchant": "snappmarket",
+    "in_stock": true,
+    "rating": 4.6,
+    "reviews": 489,
+    "best_price": false,
+    "embedding_dim": 512,
+    "image": "https://cdn.petverse.app/p/100003.jpg",
+    "attributes": {
+      "weight_kg": 3,
+      "life_stage": "puppy",
+      "breed_target": "همه نژادها"
+    }
+  },
+  {
+    "id": "PV-100004",
+    "title_fa": "هپی کت قلاده هاسکی - 7kg",
+    "title_en": "هپی کت قلاده هاسکی",
+    "brand": "هپی کت",
+    "category": "قلاده",
+    "price_irr": 2944248,
+    "price_aed": 196.28,
+    "merchant": "amazon.ae",
+    "in_stock": true,
+    "rating": 4.8,
+    "reviews": 332,
+    "best_price": false,
+    "embedding_dim": 512,
+    "image": "https://cdn.petverse.app/p/100004.jpg",
+    "attributes": {
+      "weight_kg": 3,
+      "life_stage": "puppy",
+      "breed_target": "هاسکی"
+    }
+  },
+  {
+    "id": "PV-100005",
+    "title_fa": "وو باکس حمل پرشین - 4kg",
+    "title_en": "وو باکس حمل پرشین",
+    "brand": "وو",
+    "category": "باکس حمل",
+    "price_irr": 3411004,
+    "price_aed": 227.4,
+    "merchant": "hepsiburada",
+    "in_stock": true,
+    "rating": 4.6,
+    "reviews": 528,
+    "best_price": false,
+    "embedding_dim": 512,
+    "image": "https://cdn.petverse.app/p/100005.jpg",
+    "attributes": {
+      "weight_kg": 2,
+      "life_stage": "puppy",
+      "breed_target": "پرشین"
+    }
+  },
+  {
+    "id": "PV-100006",
+    "title_fa": "پتچی ظرف غذا گلدن - 15kg",
+    "title_en": "پتچی ظرف غذا گلدن",
+    "brand": "پتچی",
+    "category": "ظرف غذا",
+    "price_irr": 1974580,
+    "price_aed": 131.64,
+    "merchant": "digikala",
+    "in_stock": false,
+    "rating": 4.6,
+    "reviews": 480,
+    "best_price": false,
+    "embedding_dim": 512,
+    "image": "https://cdn.petverse.app/p/100006.jpg",
+    "attributes": {
+      "weight_kg": 10,
+      "life_stage": "adult",
+      "breed_target": "گلدن"
+    }
+  },
+  {
+    "id": "PV-100007",
+    "title_fa": "بتوین مکمل همه نژادها - 14kg",
+    "title_en": "بتوین مکمل همه نژادها",
+    "brand": "بتوین",
+    "category": "مکمل",
+    "price_irr": 584810,
+    "price_aed": 38.99,
+    "merchant": "petshop.ir",
+    "in_stock": true,
+    "rating": 4.8,
+    "reviews": 748,
+    "best_price": true,
+    "embedding_dim": 512,
+    "image": "https://cdn.petverse.app/p/100007.jpg",
+    "attributes": {
+      "weight_kg": 7,
+      "life_stage": "adult",
+      "breed_target": "همه نژادها"
+    }
+  },
+  {
+    "id": "PV-100008",
+    "title_fa": "نوتری شامپو هاسکی - 11kg",
+    "title_en": "نوتری شامپو هاسکی",
+    "brand": "نوتری",
+    "category": "شامپو",
+    "price_irr": 3920733,
+    "price_aed": 261.38,
+    "merchant": "drsaina",
+    "in_stock": true,
+    "rating": 3.8,
+    "reviews": 605,
+    "best_price": false,
+    "embedding_dim": 512,
+    "image": "https://cdn.petverse.app/p/100008.jpg",
+    "attributes": {
+      "weight_kg": 7,
+      "life_stage": "senior",
+      "breed_target": "هاسکی"
+    }
+  },
+  {
+    "id": "PV-100009",
+    "title_fa": "مونلو خاک گربه پرشین - 6kg",
+    "title_en": "مونلو خاک گربه پرشین",
+    "brand": "مونلو",
+    "category": "خاک گربه",
+    "price_irr": 958445,
+    "price_aed": 63.9,
+    "merchant": "snappmarket",
+    "in_stock": true,
+    "rating": 4.5,
+    "reviews": 191,
+    "best_price": false,
+    "embedding_dim": 512,
+    "image": "https://cdn.petverse.app/p/100009.jpg",
+    "attributes": {
+      "weight_kg": 10,
+      "life_stage": "senior",
+      "breed_target": "پرشین"
+    }
+  },
+  {
+    "id": "PV-100010",
+    "title_fa": "ProPlan غذای خشک سگ گلدن - 6kg",
+    "title_en": "ProPlan غذای خشک سگ گلدن",
+    "brand": "ProPlan",
+    "category": "غذای خشک سگ",
+    "price_irr": 2967795,
+    "price_aed": 197.85,
+    "merchant": "amazon.ae",
+    "in_stock": true,
+    "rating": 4.4,
+    "reviews": 631,
+    "best_price": false,
+    "embedding_dim": 512,
+    "image": "https://cdn.petverse.app/p/100010.jpg",
+    "attributes": {
+      "weight_kg": 1,
+      "life_stage": "adult",
+      "breed_target": "گلدن"
+    }
+  },
+  {
+    "id": "PV-100011",
+    "title_fa": "Orijen غذای خشک گربه همه نژادها - 7kg",
+    "title_en": "Orijen غذای خشک گربه همه نژادها",
+    "brand": "Orijen",
+    "category": "غذای خشک گربه",
+    "price_irr": 2660122,
+    "price_aed": 177.34,
+    "merchant": "hepsiburada",
+    "in_stock": true,
+    "rating": 4.8,
+    "reviews": 65,
+    "best_price": false,
+    "embedding_dim": 512,
+    "image": "https://cdn.petverse.app/p/100011.jpg",
+    "attributes": {
+      "weight_kg": 15,
+      "life_stage": "adult",
+      "breed_target": "همه نژادها"
+    }
+  },
+  {
+    "id": "PV-100012",
+    "title_fa": "Acana تشویقی هاسکی - 1kg",
+    "title_en": "Acana تشویقی هاسکی",
+    "brand": "Acana",
+    "category": "تشویقی",
+    "price_irr": 345741,
+    "price_aed": 23.05,
+    "merchant": "digikala",
+    "in_stock": true,
+    "rating": 4.4,
+    "reviews": 537,
+    "best_price": false,
+    "embedding_dim": 512,
+    "image": "https://cdn.petverse.app/p/100012.jpg",
+    "attributes": {
+      "weight_kg": 4,
+      "life_stage": "adult",
+      "breed_target": "هاسکی"
+    }
+  },
+  {
+    "id": "PV-100013",
+    "title_fa": "Brit اسباب‌بازی پرشین - 13kg",
+    "title_en": "Brit اسباب‌بازی پرشین",
+    "brand": "Brit",
+    "category": "اسباب‌بازی",
+    "price_irr": 787962,
+    "price_aed": 52.53,
+    "merchant": "petshop.ir",
+    "in_stock": true,
+    "rating": 4.4,
+    "reviews": 430,
+    "best_price": false,
+    "embedding_dim": 512,
+    "image": "https://cdn.petverse.app/p/100013.jpg",
+    "attributes": {
+      "weight_kg": 10,
+      "life_stage": "puppy",
+      "breed_target": "پرشین"
+    }
+  },
+  {
+    "id": "PV-100014",
+    "title_fa": "Farmina قلاده گلدن - 13kg",
+    "title_en": "Farmina قلاده گلدن",
+    "brand": "Farmina",
+    "category": "قلاده",
+    "price_irr": 1740457,
+    "price_aed": 116.03,
+    "merchant": "drsaina",
+    "in_stock": false,
+    "rating": 5.0,
+    "reviews": 215,
+    "best_price": true,
+    "embedding_dim": 512,
+    "image": "https://cdn.petverse.app/p/100014.jpg",
+    "attributes": {
+      "weight_kg": 7,
+      "life_stage": "adult",
+      "breed_target": "گلدن"
+    }
+  },
+  {
+    "id": "PV-100015",
+    "title_fa": "رویال کنین باکس حمل همه نژادها - 10kg",
+    "title_en": "رویال کنین باکس حمل همه نژادها",
+    "brand": "رویال کنین",
+    "category": "باکس حمل",
+    "price_irr": 3831342,
+    "price_aed": 255.42,
+    "merchant": "snappmarket",
+    "in_stock": true,
+    "rating": 4.8,
+    "reviews": 613,
+    "best_price": false,
+    "embedding_dim": 512,
+    "image": "https://cdn.petverse.app/p/100015.jpg",
+    "attributes": {
+      "weight_kg": 1,
+      "life_stage": "puppy",
+      "breed_target": "همه نژادها"
+    }
+  },
+  {
+    "id": "PV-100016",
+    "title_fa": "جوسرا ظرف غذا هاسکی - 3kg",
+    "title_en": "جوسرا ظرف غذا هاسکی",
+    "brand": "جوسرا",
+    "category": "ظرف غذا",
+    "price_irr": 1978727,
+    "price_aed": 131.92,
+    "merchant": "amazon.ae",
+    "in_stock": true,
+    "rating": 3.9,
+    "reviews": 108,
+    "best_price": false,
+    "embedding_dim": 512,
+    "image": "https://cdn.petverse.app/p/100016.jpg",
+    "attributes": {
+      "weight_kg": 10,
+      "life_stage": "adult",
+      "breed_target": "هاسکی"
+    }
+  },
+  {
+    "id": "PV-100017",
+    "title_fa": "رفلکس مکمل پرشین - 15kg",
+    "title_en": "رفلکس مکمل پرشین",
+    "brand": "رفلکس",
+    "category": "مکمل",
+    "price_irr": 3373727,
+    "price_aed": 224.92,
+    "merchant": "hepsiburada",
+    "in_stock": true,
+    "rating": 4.4,
+    "reviews": 318,
+    "best_price": false,
+    "embedding_dim": 512,
+    "image": "https://cdn.petverse.app/p/100017.jpg",
+    "attributes": {
+      "weight_kg": 3,
+      "life_stage": "adult",
+      "breed_target": "پرشین"
+    }
+  },
+  {
+    "id": "PV-100018",
+    "title_fa": "هپی داگ شامپو گلدن - 13kg",
+    "title_en": "هپی داگ شامپو گلدن",
+    "brand": "هپی داگ",
+    "category": "شامپو",
+    "price_irr": 1316129,
+    "price_aed": 87.74,
+    "merchant": "digikala",
+    "in_stock": true,
+    "rating": 4.2,
+    "reviews": 287,
+    "best_price": false,
+    "embedding_dim": 512,
+    "image": "https://cdn.petverse.app/p/100018.jpg",
+    "attributes": {
+      "weight_kg": 2,
+      "life_stage": "adult",
+      "breed_target": "گلدن"
+    }
+  },
+  {
+    "id": "PV-100019",
+    "title_fa": "هپی کت خاک گربه همه نژادها - 2kg",
+    "title_en": "هپی کت خاک گربه همه نژادها",
+    "brand": "هپی کت",
+    "category": "خاک گربه",
+    "price_irr": 1924569,
+    "price_aed": 128.3,
+    "merchant": "petshop.ir",
+    "in_stock": true,
+    "rating": 4.0,
+    "reviews": 108,
+    "best_price": false,
+    "embedding_dim": 512,
+    "image": "https://cdn.petverse.app/p/100019.jpg",
+    "attributes": {
+      "weight_kg": 1,
+      "life_stage": "senior",
+      "breed_target": "همه نژادها"
+    }
+  },
+  {
+    "id": "PV-100020",
+    "title_fa": "وو غذای خشک سگ هاسکی - 3kg",
+    "title_en": "وو غذای خشک سگ هاسکی",
+    "brand": "وو",
+    "category": "غذای خشک سگ",
+    "price_irr": 4131656,
+    "price_aed": 275.44,
+    "merchant": "drsaina",
+    "in_stock": true,
+    "rating": 4.1,
+    "reviews": 61,
+    "best_price": false,
+    "embedding_dim": 512,
+    "image": "https://cdn.petverse.app/p/100020.jpg",
+    "attributes": {
+      "weight_kg": 2,
+      "life_stage": "adult",
+      "breed_target": "هاسکی"
+    }
+  }
+]
