@@ -7,17 +7,21 @@ export const VET_KB_FA = VET_KB_FULL_FA.slice(0,5); // keep legacy export
 export function ragSearch(text:string, lang='fa', topK=5){
   const t = text.toLowerCase();
   const terms = t.split(/\s+/).filter(s=>s.length>2);
-  const scored = VET_KB_FULL_FA.map(e=>{
+  const scored = (VET_KB_FULL_FA as any[]).map((e:any)=>{
     let score = 0;
-    const hay = (e.q+' '+e.a+' '+e.tags.join(' ')).toLowerCase();
-    terms.forEach(term=>{ if(hay.includes(term)) score+=2 });
-    // breed boost
-    if(e.breed && t.includes(e.breed)) score+=3;
+    const q = e.q_fa || e.q_en || e.q || '';
+    const a = e.a_fa || e.a_en || e.a || '';
+    const hay = (q+' '+a+' '+(e.tags||[]).join(' ')).toLowerCase();
+    terms.forEach((term:string)=>{ if(hay.includes(term)) score+=2 });
+    // breed boost (fa+en)
+    if(e.breed && t.includes(String(e.breed).toLowerCase())) score+=3;
     // urgency boost
-    if(e.urgency==='emergency' && /(خون|تشنج|بیهوش|seizure|blood)/.test(t)) score+=5;
+    if(e.urgency==='emergency' && /(خون|تشنج|بیهوش|seizure|blood|emergency|collapse)/.test(t)) score+=5;
+    // species boost
+    if(e.species && t.includes(e.species)) score+=1;
     return {...e, _score:score};
-  }).filter(x=>x._score>0).sort((a,b)=>b._score-a._score).slice(0,topK);
-  return scored.length? scored : VET_KB_FULL_FA.slice(0,3);
+  }).filter((x:any)=>x._score>0).sort((a:any,b:any)=>b._score-a._score).slice(0,topK);
+  return scored.length ? scored : (VET_KB_FULL_FA as any[]).slice(0,3);
 }
 
 export async function callLLM(prompt:string, context:any[]=[]){

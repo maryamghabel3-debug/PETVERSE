@@ -12,15 +12,20 @@ function checkRedFlag(text:string){
   return [...RED_FLAGS_FA, ...RED_FLAGS_EN].some(k=> t.includes(k.toLowerCase()));
 }
 
-app.get('/health', async () => ({ 
-  status: 'ok', 
-  service: 'ai-pal', 
-  version: '1.0.0-full',
-  llm: process.env.OPENAI_API_KEY ? 'gpt-4o-ready' : 'rag-fallback',
-  rag_kb_entries: 200,
-  rag_lang: 'fa',
-  models: ['gpt-4o','claude-3.5','llama-3.1']
-}));
+app.get('/health', async () => {
+  const { VET_KB_FULL_FA } = await import('./vet_kb_full_fa.js');
+  return { 
+    status: 'ok', 
+    service: 'ai-pal', 
+    version: '1.2.0-rag1000',
+    llm: process.env.OPENAI_API_KEY ? 'gpt-4o-ready' : 'rag-fallback',
+    rag_kb_entries: (VET_KB_FULL_FA as any).length,
+    rag_lang: 'fa+en',
+    models: ['gpt-4o','claude-3.5','llama-3.1'],
+    pgvector: 'ready',
+    embed_model: 'text-embedding-3-large'
+  }
+});
 
 app.post('/triage', async (req) => {
   const body:any = req.body;
