@@ -1,0 +1,21 @@
+{
+  "name": "petverse",
+  "version": "0.1.0",
+  "private": true,
+  "description": "PetVerse - خانه دوم پت‌دارها | Social + VetCare + Commerce + AI",
+  "workspaces": ["apps/*", "services/*", "packages/*"],
+  "packageManager": "pnpm@9.1.0",
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "dev:web": "turbo run dev --filter=web",
+    "dev:api": "turbo run dev --filter=api",
+    "dev:ai": "turbo run dev --filter=ai-pal",
+    "agents:run": "node agents/orchestrator.js",
+    "db:migrate": "pnpm --filter=db migrate",
+    "docker:up": "docker-compose -f infra/docker/docker-compose.yml up -d"
+  },
+  "engines": { "node": ">=20" }
+}

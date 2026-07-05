@@ -1,0 +1,66 @@
+generator client { provider = "prisma-client-js" }
+datasource db { provider = "postgresql"; url = env("DATABASE_URL") }
+
+model User {
+  id        String @id @default(cuid())
+  email     String @unique
+  name      String?
+  locale    String @default("fa")
+  createdAt DateTime @default(now())
+  pets      Pet[]
+  locationFuzzy String?
+}
+
+model Pet {
+  id       String @id @default(cuid())
+  userId   String
+  user     User @relation(fields: [userId], references: [id])
+  name     String
+  species  String // dog, cat
+  breed    String?
+  ageMonth Int?
+  weightKg Float?
+  temperament String?
+  interests String[]
+  avatarUrl String?
+  createdAt DateTime @default(now())
+}
+
+model Vet {
+  id String @id @default(cuid())
+  name String
+  licenseNo String @unique
+  country String
+  specialties String[]
+  verified Boolean @default(false)
+  rating Float?
+}
+
+model Appointment {
+  id String @id @default(cuid())
+  petId String
+  vetId String
+  type String // online, in_person, emergency
+  scheduledAt DateTime
+  status String @default("pending")
+}
+
+model Post {
+  id String @id @default(cuid())
+  authorId String
+  petId String?
+  content String
+  mediaUrls String[]
+  club String?
+  latFuzzy String?
+  lngFuzzy String?
+  createdAt DateTime @default(now())
+}
+
+model Product {
+  id String @id @default(cuid())
+  title String
+  brand String?
+  embedding Unsupported("vector(512)")?
+  priceSources Json?
+}
