@@ -1,3 +1,8 @@
 import { Module } from '@nestjs/common';
-@Module({})
+import { AuthController } from './auth.controller';
+import { JwtModule } from '@nestjs/jwt';
+@Module({
+  imports: [JwtModule.register({ secret: process.env.JWT_SECRET || 'dev_petverse_secret_change_me', signOptions:{expiresIn:'7d'}})],
+  controllers: [AuthController],
+})
 export class AuthModule {}

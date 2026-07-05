@@ -5,8 +5,10 @@ import { CommerceModule } from './modules/commerce/commerce.module';
 import { AiPalModule } from './modules/aipal/aipal.module';
 import { PetsModule } from './modules/pets/pets.module';
 import { PostsModule } from './modules/posts/posts.module';
+import { AppointmentsModule } from './modules/appointments/appointments.module';
+import { AuthModule } from './modules/auth/auth.module';
 
 @Module({
-  imports: [PetConnectModule, VetCareModule, CommerceModule, AiPalModule, PetsModule, PostsModule],
+  imports: [PetConnectModule, VetCareModule, CommerceModule, AiPalModule, PetsModule, PostsModule, AppointmentsModule, AuthModule],
 })
 export class AppModule {}
