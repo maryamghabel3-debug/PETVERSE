@@ -1,0 +1,1 @@
+export function Input(p:any){ return <input {...p} className={"w-full px-3 py-2 rounded-xl border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-orange-300 "+(p.className||"")} />}
