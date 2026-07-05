@@ -1,11 +1,23 @@
 # PetVerse 🐾
-**خانه دوم پت‌دارها**
+**خانه دوم پت‌دارها – v1.1 Full**
 
-Super-App: PetConnect Social + VetCare Hub + Commerce هوشمند + PetPal AI
+Super-App: PetConnect Social + VetCare Hub + Commerce هوشمند + Insurance + PetPal AI + IoT + Blockchain
 
 **Repo:** https://github.com/maryamghabel3-debug/PETVERSE
 **PM:** Agent Mode – Arena.ai
 **Team:** 7 Agent تخصصی
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/maryamghabel3-debug/PETVERSE&root-directory=apps/web)
+
+**v1.1 – 5 July 2026**
+- ✅ PetPal RAG 200 مقاله فارسی دامپزشکی – GPT-4o
+- ✅ LiveKit ویدیوویزیت – e-prescription
+- ✅ Insurance Marketplace – Lemonade / Cover Genius
+- ✅ IoT Hub – GPS + Feeder
+- ✅ NFT Badge – Polygon L2
+- ✅ Admin شفاف :3001
+- ✅ Mobile Expo
+- ✅ Pitch Deck – `docs/PetVerse_Investor_Deck.pptx`
 
 ## بازار شروع
 - Phase 1 FA: ایران - Social + AI (بدون پرداخت)

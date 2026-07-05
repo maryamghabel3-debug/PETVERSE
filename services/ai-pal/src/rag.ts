@@ -1,22 +1,52 @@
-// PetPal RAG – GPT-4o + vet knowledge base FA/EN
-// npm i openai
-export const VET_KB_FA = [
-  {q:'استفراغ', a:'ناشتا 12ساعت، آب کم‌کم، اگر خونی بود اورژانس', tags:['gastro']},
-  {q:'اسهال', a:'برنج مرغ آب‌پز، پروبیوتیک، اگر خونی >24h ویزیت', tags:['gastro']},
-  {q:'بی‌حالی', a:'چک دما، آب‌رسانی، اگر >24h یا تب >39.5 ویزیت', tags:['general']},
-  {q:'تشنج', a:'RED FLAG – سر را محافظت، زمان تشنج را ثبت، فوری اورژانس', tags:['emergency']},
-  {q:'واکسن', a:'هاری سالانه، DHPP توله 8-12-16 هفته', tags:['prevention']},
-];
-export function ragSearch(text:string, lang='fa'){
-  const t=text.toLowerCase();
-  return VET_KB_FA.filter(k=> t.includes(k.q) || k.tags.some(tag=>t.includes(tag))).slice(0,3);
+// PetVerse RAG – GPT-4o + vet knowledge base FA/EN
+// Full KB: 200 entries FA
+import { VET_KB_FULL_FA } from './vet_kb_full_fa.js';
+
+export const VET_KB_FA = VET_KB_FULL_FA.slice(0,5); // keep legacy export
+
+export function ragSearch(text:string, lang='fa', topK=5){
+  const t = text.toLowerCase();
+  const terms = t.split(/\s+/).filter(s=>s.length>2);
+  const scored = VET_KB_FULL_FA.map(e=>{
+    let score = 0;
+    const hay = (e.q+' '+e.a+' '+e.tags.join(' ')).toLowerCase();
+    terms.forEach(term=>{ if(hay.includes(term)) score+=2 });
+    // breed boost
+    if(e.breed && t.includes(e.breed)) score+=3;
+    // urgency boost
+    if(e.urgency==='emergency' && /(خون|تشنج|بیهوش|seizure|blood)/.test(t)) score+=5;
+    return {...e, _score:score};
+  }).filter(x=>x._score>0).sort((a,b)=>b._score-a._score).slice(0,topK);
+  return scored.length? scored : VET_KB_FULL_FA.slice(0,3);
 }
-export async function callLLM(prompt:string){
-  // if OPENAI_API_KEY set → real call, else fallback
-  if(process.env.OPENAI_API_KEY){
-    // const openai = new OpenAI({apiKey:process.env.OPENAI_API_KEY});
-    // const r = await openai.chat.completions.create({model:'gpt-4o', messages:[...]});
-    return '[GPT-4o connected – set OPENAI_API_KEY in .env]'
+
+export async function callLLM(prompt:string, context:any[]=[]){
+  const apiKey = process.env.OPENAI_API_KEY;
+  if(!apiKey) return null;
+  try{
+    // Dynamic import to avoid hard dep in dev
+    const {default: OpenAI} = await import('openai');
+    const openai = new OpenAI({apiKey});
+    const sys = `تو PetPal هستی – دستیار دامپزشکی تریاژ. فارسی صمیمی حرف بزن. هرگز دارو تجویز نکن. همیشه disclaimer بده: «آموزشی‌ست، جایگزین ویزیت نیست». اگر red-flag دیدی بگو اورژانس.`;
+    const ctx = context.map((c:any)=>`- ${c.q}: ${c.a}`).join('\n');
+    const resp = await openai.chat.completions.create({
+      model: 'gpt-4o',
+      temperature: 0.3,
+      max_tokens: 400,
+      messages:[
+        {role:'system', content:sys},
+        {role:'user', content:`علائم: ${prompt}\n\nدانش مرتبط:\n${ctx}\n\nپاسخ فارسی کوتاه، ساختار: خلاصه / توصیه / هشدار / زمان مراجعه`}
+      ]
+    });
+    return resp.choices[0]?.message?.content || null;
+  }catch(e:any){
+    return `[LLM error: ${e.message}]`;
   }
-  return null
 }
+
+export const RAG_STATS = {
+  entries: VET_KB_FULL_FA.length,
+  languages: ['fa','en'],
+  last_update: '2026-07-05',
+  coverage: ['gastro','derma','respiratory','neuro','ortho','ophthalmo','dental','nutrition','emergency','prevention']
+};

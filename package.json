@@ -1,9 +1,13 @@
 {
   "name": "petverse",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "PetVerse - Super-App کامل – Social + VetCare + Commerce + Insurance + AI + IoT + Blockchain",
-  "workspaces": ["apps/*", "services/*", "packages/*"],
+  "workspaces": [
+    "apps/*",
+    "services/*",
+    "packages/*"
+  ],
   "packageManager": "pnpm@9.1.0",
   "scripts": {
     "dev": "turbo run dev --parallel",
@@ -23,5 +27,7 @@
     "test:e2e": "playwright test",
     "release": "echo 'PetVerse v1.0 Full'"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  }
 }

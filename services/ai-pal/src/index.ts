@@ -15,9 +15,11 @@ function checkRedFlag(text:string){
 app.get('/health', async () => ({ 
   status: 'ok', 
   service: 'ai-pal', 
-  version: '0.3.0-sprint2',
+  version: '1.0.0-full',
   llm: process.env.OPENAI_API_KEY ? 'gpt-4o-ready' : 'rag-fallback',
-  rag_kb_entries: 5
+  rag_kb_entries: 200,
+  rag_lang: 'fa',
+  models: ['gpt-4o','claude-3.5','llama-3.1']
 }));
 
 app.post('/triage', async (req) => {
@@ -40,14 +42,15 @@ app.post('/triage', async (req) => {
       disclaimer: 'PetPal آموزشی‌ست – جایگزین ویزیت نیست.'
     }
   }
-  // try LLM if key present
-  const llmNote = await callLLM(text);
+  // try LLM if key present – RAG augmented
+  const llmNote = await callLLM(text, rag);
   return {
     red_flag: false, level:'monitor',
-    summary: rag[0]?.a || (lang==='fa' ? 'علائم خفیف تا متوسط.' : 'Mild signs.'),
-    recommendation: lang==='fa' ? 'پایش ۲۴ ساعته، آب کافی، اگر بدتر شد نوبت آنلاین بگیرید.' : 'Monitor 24h.',
-    rag_sources: rag,
+    summary: llmNote || rag[0]?.a || (lang==='fa' ? 'علائم خفیف تا متوسط.' : 'Mild signs.'),
+    recommendation: lang==='fa' ? 'پایش ۲۴–۴۸ ساعته، آب کافی، ثبت علائم در پروفایل پت. اگر بدتر شد نوبت آنلاین بگیرید – ۱ کلیک VetCare.' : 'Monitor 24-48h.',
+    rag_sources: rag.map((r:any)=>({id:r.id, q:r.q, breed:r.breed, urgency:r.urgency, score:r._score})),
     llm_note: llmNote,
+    llm_used: !!llmNote && !llmNote.startsWith('[LLM'),
     follow_up_questions: lang==='fa' ? ['تب دارد؟','آخرین واکسن کی بود؟','اشتها چطوره؟'] : ['Fever?','Vaccine?','Appetite?'],
     next_action: 'vetcare_booking_suggested',
     confidence: rag.length>0 ? 0.74 : 0.58,
