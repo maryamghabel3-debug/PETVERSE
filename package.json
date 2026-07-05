@@ -1,8 +1,8 @@
 {
   "name": "petverse",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
-  "description": "PetVerse - خانه دوم پت‌دارها | Social + VetCare + Commerce + AI",
+  "description": "PetVerse - Super-App کامل – Social + VetCare + Commerce + Insurance + AI + IoT + Blockchain",
   "workspaces": ["apps/*", "services/*", "packages/*"],
   "packageManager": "pnpm@9.1.0",
   "scripts": {
@@ -11,11 +11,17 @@
     "lint": "turbo run lint",
     "test": "turbo run test",
     "dev:web": "turbo run dev --filter=web",
+    "dev:admin": "turbo run dev --filter=admin",
     "dev:api": "turbo run dev --filter=api",
     "dev:ai": "turbo run dev --filter=ai-pal",
+    "dev:insurance": "node services/insurance/src/index.ts",
+    "dev:iot": "node services/iot/src/index.ts",
     "agents:run": "node agents/orchestrator.js",
     "db:migrate": "pnpm --filter=db migrate",
-    "docker:up": "docker-compose -f infra/docker/docker-compose.yml up -d"
+    "db:seed": "pnpm --filter=db seed",
+    "docker:up": "docker-compose -f infra/docker/docker-compose.yml up -d",
+    "test:e2e": "playwright test",
+    "release": "echo 'PetVerse v1.0 Full'"
   },
   "engines": { "node": ">=20" }
 }

@@ -1,0 +1,1 @@
+{"name":"blockchain","version":"1.0.0","dependencies":{"ethers":"^6.11.1","fastify":"^4.26.2"}}

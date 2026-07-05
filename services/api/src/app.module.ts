@@ -7,8 +7,9 @@ import { PetsModule } from './modules/pets/pets.module';
 import { PostsModule } from './modules/posts/posts.module';
 import { AppointmentsModule } from './modules/appointments/appointments.module';
 import { AuthModule } from './modules/auth/auth.module';
+import { InsuranceModule } from './modules/insurance/insurance.module';
 
 @Module({
-  imports: [PetConnectModule, VetCareModule, CommerceModule, AiPalModule, PetsModule, PostsModule, AppointmentsModule, AuthModule],
+  imports: [PetConnectModule, VetCareModule, CommerceModule, AiPalModule, PetsModule, PostsModule, AppointmentsModule, AuthModule, InsuranceModule],
 })
 export class AppModule {}

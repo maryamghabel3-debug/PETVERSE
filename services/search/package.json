@@ -1,0 +1,1 @@
+{"name":"search","version":"1.0.0","scripts":{"dev":"node src/index.js"},"dependencies":{"@opensearch-project/opensearch":"^2.7.0"}}

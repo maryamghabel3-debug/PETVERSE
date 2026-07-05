@@ -1,3 +1,4 @@
 import { Module } from '@nestjs/common';
-@Module({})
+import { CommerceController } from './commerce.controller';
+@Module({ controllers:[CommerceController] })
 export class CommerceModule {}
